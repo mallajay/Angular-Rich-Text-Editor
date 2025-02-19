@@ -1,27 +1,122 @@
-# TextEditor
+# Advance Text Editor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+![Advance Text Editor](https://your-image-url.com/banner.png)
 
-## Development server
+A powerful, lightweight, and customizable rich text editor component for **Angular**. This editor provides advanced text formatting, image insertion, alignment options, and seamless integration with Angular forms.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Customizable Toolbar**: Supports dynamic formatting options.
+- **Text Formatting**: Bold, italic, underline, lists, and alignment.
+- **Image Upload & Resize**: Easily insert and resize images.
+- **Selection API**: Apply styles to selected text.
+- **Reactive Forms Support**: Implements `ControlValueAccessor` for seamless form integration.
+- **Standalone Component**: Can be used independently in Angular projects.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Basic Usage
 
-## Running unit tests
+```html
+<app-advance-text-editor [(ngModel)]="editorContent"></app-advance-text-editor>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+export class MyComponent {
+  editorContent = "<p>Hello, World!</p>";
+}
+```
 
-## Running end-to-end tests
+### Custom Menu Options
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```html
+<app-advance-text-editor [customMenu]="['bold', 'italic', 'underline']"></app-advance-text-editor>
+```
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## API Reference
+
+### Inputs
+
+| Property     | Type       | Default | Description                            |
+| ------------ | ---------- | ------- | -------------------------------------- |
+| `customMenu` | `string[]` | `[]`    | List of formatting options to display. |
+
+### Outputs
+
+| Event         | Description                                          |
+| ------------- | ---------------------------------------------------- |
+| `valueChange` | Emits updated content whenever the text is modified. |
+
+---
+
+## Methods
+
+### `applyFormatting(tag: string)`
+
+Applies a specific formatting to the selected text.
+
+### `applyTextAlignment(alignment: string)`
+
+Aligns selected text or images (`left`, `center`, `right`).
+
+### `onImageUpload(event: Event)`
+
+Handles image uploads and inserts them into the editor.
+
+### `insertCustomValue(event: any)`
+
+Inserts custom values into the editor.
+
+### `clear()`
+
+Clears the editor content.
+
+---
+
+## Customization
+
+### Styling
+
+You can customize the editor styles via CSS:
+
+```scss
+.advance-text-editor {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 200px;
+}
+```
+
+### Extending Functionality
+
+You can extend the component by modifying `advance-text-editor.component.ts` to add new features like font selection, background colors, etc.
+
+---
+
+## Contribution
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Create a new Pull Request
+
+---
+
+## License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Support
+
+If you find this project useful, please ⭐ the repository and share it!
+
+For any issues or suggestions, open an issue on [GitHub](https://github.com/your-repository/issues).

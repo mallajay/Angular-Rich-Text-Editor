@@ -1,0 +1,25 @@
+.output-container {
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 8px auto; // Center images by default
+  }
+
+  .inline-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  [data-align="center"] {
+    text-align: center;
+  }
+
+  [data-align="left"] {
+    text-align: left;
+  }
+
+  [data-align="right"] {
+    text-align: right;
+  }
+}

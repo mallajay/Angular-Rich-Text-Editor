@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AdvanceTextEditorComponent } from './advance-text-editor/advance-text-editor.component';
 
 @Component({
   selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [ReactiveFormsModule, AdvanceTextEditorComponent],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  title = 'text-editor';
+  form = new FormGroup({
+    editorContent: new FormControl(''),
+  });
+
+  customOptions = ['Hello', 'World', 'Angular', 'Editor'];
+
+  submitForm() {
+    console.log('Editor Content:', this.form.value.editorContent);
+  }
 }

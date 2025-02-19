@@ -1,0 +1,40 @@
+<div class="editor-container">
+  <div class="toolbar">
+    <button (click)="applyFormatting('b')"><b>B</b></button>
+    <button (click)="applyFormatting('i')"><i>I</i></button>
+    <button (click)="applyFormatting('u')"><u>U</u></button>
+    <button (click)="applyFormatting('ol')">OL</button>
+    <button (click)="applyFormatting('ul')">UL</button>
+
+    <!-- Text Alignment Buttons -->
+    <button (click)="applyTextAlignment('left')">⬅ Left</button>
+    <button (click)="applyTextAlignment('center')">⬆ Center</button>
+    <button (click)="applyTextAlignment('right')">➡ Right</button>
+    <button (click)="applyTextAlignment('justify')">📏 Justify</button>
+
+    <input
+      type="file"
+      accept="image/*"
+      (change)="onImageUpload($event)"
+      hidden
+      #imageInput
+    />
+    <button (click)="imageInput.click()">🖼️</button>
+
+    <select (change)="insertCustomValue($event)">
+      <option value="" selected disabled>Custom Menu</option>
+      <option *ngFor="let item of customMenu" [value]="item">
+        {{ item }}
+      </option>
+    </select>
+
+    <button (click)="clear()">Clear</button>
+  </div>
+
+  <div
+    class="editor"
+    contenteditable="true"
+    #editorRef
+    (input)="updateContent()"
+  ></div>
+</div>
