@@ -1,6 +1,7 @@
 # Advance Text Editor
 
-![Advance Text Editor]([https://your-image-url.com/banner.png](https://github.com/mallajay/Angular-Rich-Text-Editor/blob/master/img.png))
+![Advance Text Editor](https://raw.githubusercontent.com/mallajay/Angular-Rich-Text-Editor/refs/heads/master/img.png)
+
 
 A powerful, lightweight, and customizable rich text editor component for **Angular**. This editor provides advanced text formatting, image insertion, alignment options, and seamless integration with Angular forms.
 
