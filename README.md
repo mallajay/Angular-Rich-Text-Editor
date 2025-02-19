@@ -97,6 +97,12 @@ You can extend the component by modifying `advance-text-editor.component.ts` to 
 
 ---
 
+## Live Demo
+
+Check out the live demo on StackBlitz: [Angular Rich Text Editor](https://stackblitz.com/~/github.com/mallajay/Angular-Rich-Text-Editor)
+
+---
+
 ## Contribution
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
