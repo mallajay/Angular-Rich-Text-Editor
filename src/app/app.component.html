@@ -1,8 +1,11 @@
-<p>
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta enim quam
-  sunt, mollitia explicabo perferendis placeat quo beatae, odit, eius
-  doloremque! Quaerat, dolor modi. Magnam nesciunt dicta eius pariatur esse.
-</p>
+<div style="text-align: center">
+  <h3>Advance Text Editor</h3>
+  <p>
+    A powerful, lightweight, and customizable rich text editor component for
+    Angular. This editor provides advanced text formatting, image insertion,
+    alignment options, and seamless integration with Angular forms.
+  </p>
+</div>
 
 <form [formGroup]="form" (ngSubmit)="submitForm()">
   <app-advance-text-editor
@@ -12,6 +15,8 @@
 
   <button type="submit">Submit</button>
 </form>
+
+<hr />
 
 <p>Editor Output:</p>
 <div [innerHTML]="form.value.editorContent" class="output-container"></div>
